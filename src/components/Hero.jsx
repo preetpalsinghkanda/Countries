@@ -14,7 +14,7 @@ const Hero = ({ darkMode }) => {
   const regions = [
     // "Filter by Region",
     "Africa",
-    "America",
+    "Americas",
     "Asia",
     "Europe",
     "Oceania",
@@ -23,9 +23,16 @@ const Hero = ({ darkMode }) => {
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState("Filter by Region");
 
-  const filterBySearch = data.filter((country) =>
-    country.name.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filterCountries = data.filter((country) => {
+    const filterBySearch = country.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const filterByRegion =
+      selected === "Filter by Region" || country.region === selected;
+
+    return filterByRegion && filterBySearch;
+  });
 
   return (
     <div
@@ -83,8 +90,11 @@ const Hero = ({ darkMode }) => {
       </div>
 
       <div className=" grid grid-cols-4 grid-rows-2 gap-15  my-12">
-        {filterBySearch.slice(0, 8).map((country) => (
-          <Link key={country.alpha3Code} to={`/country/${country.alpha3Code}`} > <Flags darkMode={darkMode} country={country} /></Link>
+        {filterCountries.map((country) => (
+          <Link key={country.alpha3Code} to={`/country/${country.alpha3Code}`}>
+            {" "}
+            <Flags darkMode={darkMode} country={country} />
+          </Link>
         ))}
       </div>
     </div>
