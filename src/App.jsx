@@ -6,17 +6,14 @@ import Detail from "./components/Detail";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
-   const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={`max-w-[1500px]  mx-auto flex  flex-col w-full `}>
-       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
-       
-        <Route path="/" element={<Hero darkMode={darkMode} />}/>
-      <Route path="/country/:code" element={<Detail/>}/>
-      
-     
-     </Routes>
+        <Route path="/" element={<Hero darkMode={darkMode} />} />
+        <Route path="/country/:code" element={<Detail darkMode={darkMode} />} />
+      </Routes>
     </div>
   );
 };
