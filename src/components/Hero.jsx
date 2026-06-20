@@ -36,9 +36,9 @@ const Hero = ({ darkMode }) => {
 
   return (
     <div
-      className={` px-20 flex ${darkMode ? "bg-[hsl(207,26%,17%)]" : "bg-[#fcfcfc]"} flex-col justify-between py-10`}
+      className={` lg:px-20 md:px-18 sm:px-15 px-5 flex ${darkMode ? "bg-[hsl(207,26%,17%)]" : "bg-[#fcfcfc]"} flex-col  justify-between lg:py-10 md:py-8 py-6`}
     >
-      <div className="flex w-full justify-between">
+      <div className="flex md:flex-row flex-col w-full md:gap-2 gap-8 justify-between">
         <div
           className={`shadow-[0_1px_8px_rgba(0,0,0,0.10)] ${darkMode ? "bg-[hsl(209,23%,22%)]" : "bg-white"}  rounded-md max-w-lg w-full`}
         >
@@ -89,14 +89,14 @@ const Hero = ({ darkMode }) => {
         </div>
       </div>
 
-      <div className=" grid grid-cols-4 grid-rows-2 gap-15  my-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-12">
         {filterCountries.map((country) => (
           <Link key={country.alpha3Code} to={`/country/${country.alpha3Code}`}>
             {" "}
             <Flags darkMode={darkMode} country={country} />
           </Link>
         ))}
-      </div>
+      </div> 
     </div>
   );
 };

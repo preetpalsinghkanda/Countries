@@ -3,7 +3,7 @@ import React from "react";
 const Flags = ({ country, darkMode }) => {
   return (
     <div
-      className={`rounded-lg h-full shadow-lg ${darkMode ? "bg-[hsl(209,23%,22%)]" : "bg-white"}  `}
+      className={`rounded-lg    h-full shadow-lg ${darkMode ? "bg-[hsl(209,23%,22%)]" : "bg-white"}  `}
     >
       <div className="rounded-t-lg w-full h-44  overflow-hidden">
         <img
