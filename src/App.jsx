@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 
 const App = () => {
   return (
-    <div className="max-w-[1500px] mx-auto  w-full border">
+    <div className="max-w-[1500px] mx-auto flex  flex-col w-full ">
       <Navbar />
       <Hero/>
     </div>
