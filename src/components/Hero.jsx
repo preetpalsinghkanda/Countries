@@ -8,6 +8,7 @@ import {
 import { Listbox, Transition } from "@headlessui/react";
 import Flags from "./flags";
 import data from "../Data/data.json";
+import { Link } from "react-router-dom";
 
 const Hero = ({ darkMode }) => {
   const regions = [
@@ -83,7 +84,7 @@ const Hero = ({ darkMode }) => {
 
       <div className=" grid grid-cols-4 grid-rows-2 gap-15  my-12">
         {filterBySearch.slice(0, 8).map((country) => (
-          <Flags darkMode={darkMode} country={country} />
+          <Link key={country.alpha3Code} to={`/country/${country.alpha3Code}`} > <Flags darkMode={darkMode} country={country} /></Link>
         ))}
       </div>
     </div>
