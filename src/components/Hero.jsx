@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Listbox, Transition } from "@headlessui/react";
 import Flags from "./flags";
+import data from "../Data/data.json";
 
 const Hero = () => {
   const regions = [
@@ -18,12 +19,16 @@ const Hero = () => {
     "Oceania",
   ];
 
+  const [search, setSearch] = useState("");
   const [selected, setSelected] = useState("Filter by Region");
+
+  const filterBySearch = data.filter((country) =>
+    country.name.toLowerCase().includes(search.toLowerCase()),
+  );
 
   return (
     <div className=" px-20 flex bg-[#fcfcfc] flex-col justify-between py-10">
       <div className="flex w-full justify-between">
-        
         <div className="shadow-[0_1px_8px_rgba(0,0,0,0.10)] bg-white rounded-md max-w-lg w-full">
           <div className=" px-6 flex gap-5 items-center py-3">
             <FontAwesomeIcon
@@ -32,6 +37,8 @@ const Hero = () => {
             />
             <input
               type="text"
+              value={search}
+              onChange={(x) => setSearch(x.target.value)}
               placeholder="Search for a country..."
               className="border-0 w-full outline-hidden"
             />
@@ -64,10 +71,10 @@ const Hero = () => {
       </div>
 
       <div className=" grid grid-cols-4 grid-rows-2 gap-15  my-12">
-        <Flags />
-       
-
-        </div>
+        {filterBySearch.slice(0, 8).map((country) => (
+          <Flags country={country} />
+        ))}
+      </div>
     </div>
   );
 };
