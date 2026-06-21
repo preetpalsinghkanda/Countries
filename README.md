@@ -5,7 +5,7 @@ a responsive react web application that allow user to explore countries. Users c
 
 ## Demo URL
 
-``` ```
+```https://countriesinfoooo.netlify.app/```
 
 
 
@@ -32,8 +32,11 @@ a responsive react web application that allow user to explore countries. Users c
 
 # Screenshot 
 
-![alt text](image.png)
+<img width="1897" height="987" alt="image" src="https://github.com/user-attachments/assets/60956ff1-92d5-4813-b497-3bb403d66780" />
 
+
+
+##
 
 
 
