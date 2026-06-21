@@ -12,7 +12,7 @@ const App = () => {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<Hero darkMode={darkMode} />} />
-        {/* <Route path="/country/:code" element={<Detail darkMode={darkMode} />} /> */}
+        <Route path="/country/:code" element={<Detail darkMode={darkMode} />} />
       </Routes>
     </div>
   );

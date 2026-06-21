@@ -12,7 +12,7 @@ const Detail = ({ darkMode }) => {
 
   return (
     <div
-      className={`${darkMode ? "bg-[hsl(207,26%,17%)]" : "bg-[#fcfcfc]"}  py-12 px-20 h-175 `}
+      className={`${darkMode ? "bg-[hsl(207,26%,17%)]" : "bg-[#fcfcfc]"} h-auto  min-h-screen py-12 lg:px-20  md:px-12 px-5 sm:px-8  `}
     >
       <button
         onClick={() => navigate("/")}
@@ -21,23 +21,23 @@ const Detail = ({ darkMode }) => {
         <FontAwesomeIcon icon={faArrowLeftLong} /> Back
       </button>
 
-      <div className="my-20 flex justify-around">
-        <div className="w-140">
+      <div className="my-16 items-center flex lg:flex-row  gap-14 flex-col justify-between">
+        <div className="w-full lg:w-1/2 max-w-[700px]">
           <img
             src={selectedCountry.flag}
             alt={selectedCountry.name}
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
 
-        <div className=" max-w-xl w-full justify-center flex flex-col ">
+        <div className=" w-full lg:w-1/2 flex flex-col">
           <h3
             className={`text-3xl ${darkMode ? "text-white" : ""} font-extrabold`}
           >
             {selectedCountry.name}
           </h3>
           <div
-            className={`flex ${darkMode ? "text-[#fffffff3]" : ""}  my-5 text-md justify-between font-[600]`}
+            className={`grid gird-cols-1 md:grid-cols-2 gap-10 ${darkMode ? "text-[#fffffff3]" : ""}  my-5 text-md justify-between font-[600]`}
           >
             <div className="flex flex-col gap-2 ">
               <p>
@@ -110,7 +110,7 @@ const Detail = ({ darkMode }) => {
               </p>
             </div>
           </div>
-          <div className="flex gap-3 mt-10">
+          <div className="flex gap-3 mt-10 flex-col">
             <h4
               className={`text-md font-bold ${darkMode ? "text-[#ffffffe2]" : ""} text-nowrap`}
             >
