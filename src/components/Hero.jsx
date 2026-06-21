@@ -6,7 +6,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { Listbox, Transition } from "@headlessui/react";
-import Flags from "./flags";
+import Flags from "./Flags";
 import data from "../Data/data.json";
 import { Link } from "react-router-dom";
 
